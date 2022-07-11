@@ -21,4 +21,4 @@ build_script:
   - cmake --build build
 
 artifacts:
-  - path: build\%artifactName%
+  - path: build
