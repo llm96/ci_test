@@ -16,7 +16,7 @@ configuration:
   - Release
 
 build_script:
-  - cmake -S . -B build --config="%CONFIGURATION%" -A x64 -DRESTINIO_USE_EXTERNAL_EXPECTED_LITE=1 -DBUILD_SHARED_LIBS:BOOL=OFF
+  - cmake -S . -B build -DCMAKE_BUILD_TYPE="%CONFIGURATION%" -A x64 -DRESTINIO_USE_EXTERNAL_EXPECTED_LITE=1 -DBUILD_SHARED_LIBS:BOOL=OFF
   - cmake --build build
 
 after_build:
