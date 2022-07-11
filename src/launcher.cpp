@@ -68,7 +68,7 @@ int main(int argc, char* argv[])
         return EXIT_FAILURE;
     }
 
-    auto bytes_written = std::size_t { 0 };
+    auto bytes_written = SIZE_T { 0 };
     result = WriteProcessMemory(p_info.hProcess, memory, dll.data(), dll.size(), &bytes_written);
 
     if (result == FALSE)
