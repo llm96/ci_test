@@ -1,0 +1,24 @@
+build_cloud: Nitori
+image: Windows
+
+branches:
+  only:
+    - master
+
+build:
+  verbosity: detailed
+
+configuration:
+  - Debug
+  - Release
+
+init:
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\VsDevCmd.bat"
+  - set PATH=C:\Program Files\CMake\bin;%PATH%
+
+build_script:
+  - cmake -S . -B build --DCMAKE_BUILD_TYPE="%CONFIGURATION%"
+  - cmake --build build
+
+artifacts:
+  - path: build\%artifactName%
